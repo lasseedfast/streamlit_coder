@@ -6,7 +6,7 @@ import streamlit as st
 import ollama
 from ollama import ChatResponse
 
-MODEL = 'qwen3_4b_32k' # Type "ollama list" in terminal to see available models
+MODEL = '<model>' # Type "ollama list" in terminal to see available models
 
 class PythonScript(BaseModel):
     script: str = Field(description="The Python script to be executed.")
@@ -42,6 +42,7 @@ class LLM:
             and automatically maintains conversation history in self.messages.
         """
         self.messages.append({"role": "user", "content": message})
+
         response: ChatResponse = ollama.chat(
             model=self.model,
             messages=self.messages,
