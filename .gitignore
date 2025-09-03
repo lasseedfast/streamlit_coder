@@ -3,3 +3,7 @@
 # Exclude files in pages folder
 pages/*
 .DS_Store
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
