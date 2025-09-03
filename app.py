@@ -65,6 +65,27 @@ if 'current_libraries' not in st.session_state:
 
 st.title("Python Script Generator Chat")
 
+# Add helpful example information
+with st.expander("💡 See Example Scripts"):
+    st.markdown("""
+    **Need inspiration?** Check out example scripts in the `examples/` directory:
+    
+    🔢 **Number Calculator Example** (`examples/number_calculator.py`)
+    - Basic arithmetic operations (add, subtract, multiply, divide)
+    - Advanced mathematical functions (trigonometry, logarithms, roots)
+    - Statistical calculations with data visualization
+    - Scientific calculator with unit conversions
+    - Interactive Streamlit widgets and user-friendly interface
+    
+    You can ask me to create similar scripts or use these as inspiration for your own ideas!
+    """)
+    
+    st.markdown("**Example requests you can try:**")
+    st.markdown("- *Create a calculator for basic math operations*")
+    st.markdown("- *Build a data analysis tool with statistics*")
+    st.markdown("- *Make a file upload and processing app*")
+    st.markdown("- *Design a data visualization dashboard*")
+
 # Display chat history
 for i, (role, message) in enumerate(st.session_state.chat_history):
     if role == 'user':
@@ -85,6 +106,13 @@ if user_input:
     **IMPORTANT! The user can not change anything in the script, only interact with it via Streamlit UI elements.** 
     Therefore, don't user placeholders like "your_file" or "your_text". Instead, use Streamlit UI elements to get the input from the user.
     If the user gives feedback, improve the previous script accordingly.
+    
+    For inspiration, you can reference the comprehensive number calculator example at examples/number_calculator.py which demonstrates:
+    - Interactive mathematical operations with Streamlit widgets
+    - Data visualization and statistical analysis
+    - Professional layout with columns and metrics
+    - Error handling and user feedback
+    - Scientific calculations and unit conversions
     """
     # Build conversation context
     conversation = "\n".join([
